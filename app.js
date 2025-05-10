@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const port = process.env.PORT || 3000;
 
 const http = require("http");
 
@@ -24,6 +25,6 @@ io.on("connection", (socket) => {
 app.get("/", (req, res) => {
     res.render("index");
 })
-server.listen(3000,() => {
+server.listen(port,() => {
     console.log("Server is running on port 3000");
 })
